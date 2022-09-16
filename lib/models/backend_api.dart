@@ -131,6 +131,13 @@ class BackendAPI {
         );
       }
       return null;
-    });
+    }).catchError(
+      (error) {
+        return ErrorModel(
+          statusCode: 000,
+          message: "Kindly check your internet connection",
+        );
+      },
+    );
   }
 }
