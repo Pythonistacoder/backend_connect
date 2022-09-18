@@ -24,28 +24,36 @@ class HttpVerb {
 
     switch (httpVerb) {
       case POST:
-        return http.post(
-          Uri.parse(url),
-          headers: headers,
-          body: body,
-        );
+        return http
+            .post(
+              Uri.parse(url),
+              headers: headers,
+              body: body,
+            )
+            .timeout(const Duration(seconds: 8));
       case GET:
-        return http.get(
-          Uri.parse(url),
-          headers: headers,
-        );
+        return http
+            .get(
+              Uri.parse(url),
+              headers: headers,
+            )
+            .timeout(const Duration(seconds: 8));
       case PUT:
-        return http.put(
-          Uri.parse(url),
-          headers: headers,
-          body: body,
-        );
+        return http
+            .put(
+              Uri.parse(url),
+              headers: headers,
+              body: body,
+            )
+            .timeout(const Duration(seconds: 8));
       case DELETE:
-        return http.delete(
-          Uri.parse(url),
-          headers: headers,
-          body: body,
-        );
+        return http
+            .delete(
+              Uri.parse(url),
+              headers: headers,
+              body: body,
+            )
+            .timeout(const Duration(seconds: 8));
       default:
         throw Exception("INCORRECT HTTP VERB");
     }
