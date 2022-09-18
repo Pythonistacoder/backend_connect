@@ -79,7 +79,7 @@ class BackendAPI {
       },
       test: (e) => e is FormatException,
     ).catchError((error) {
-      print(error);
+      throw Exception("Kindly check your internet connection");
     });
   }
 
